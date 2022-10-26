@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
-
+const api = require('./config.js');
 const port = process.env.PORT;
 const app = express();
 
@@ -33,7 +33,7 @@ app.post('/', function(req, res) {
   const https = require('https');
   const options = {
     method: 'POST',
-    auth: "kuu7life:25ca98e06767172138c05fc433685f35-us12",
+    auth: api.letApi(),
   };
 
   const request = https.request(url, options, function(response) {
